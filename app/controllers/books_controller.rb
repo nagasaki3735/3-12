@@ -1,17 +1,15 @@
 class BooksController < ApplicationController
-  def new
-    @bookers=Bookers.index
-  end
 
   def create
-    bookers = Bookers.index(books_params)
+    @book = Book.new(book_params)
     
-    books.save
+    @book.save
     
     redirect_to '/show'
   end
   
   def index
+    @book = Book.new
 
   end
 
@@ -22,7 +20,7 @@ class BooksController < ApplicationController
   end
 
   private
-  def books_params
-    params.require(:bookers).permit(:title, :body)
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end
