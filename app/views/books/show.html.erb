@@ -1,10 +1,23 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
- <head>
-  <title>Bookers</title>
-  <link rel="stylesheet" media="all" href="application.css">
-  
- </head>
+
+<html lang="ja">
+<meta charset="UTF-8" />
+<link rel="stylesheet" media="all" href="application.css">
+
+
+
+ <body>
+
+<p>Book was successfully created.</p>
+
+<p><strong>Title: </strong><%= @book.title %></p>
+
+<p><strong>Body: </strong><%= @book.body %></p>
+
+<a class="edit" href="/edit">Edit</a> |
+<a class="back" href="/books">Back</a>
+
+
+ </body>
 </html>
-
-
