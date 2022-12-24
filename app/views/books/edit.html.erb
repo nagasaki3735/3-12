@@ -1,2 +1,28 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Editing Book</h1>
+
+
+<%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+<% if @book.errors.any? %>
+<h1>error</h1>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <h2><li><%= message %></li></h2>
+      <% end %>
+    </ul>
+<% end %>
+
+  <h4>tiitle</h4>
+  <%= f.text_field :title %>
+
+  <h4>body</h4>
+  <%= f.text_area :body %>
+
+  <br><%= f.submit 'Update Book' %></br>
+
+
+<% end %>
+
+
+<%= link_to "show", "/books/#{@book.id}" %>
+  |
+<%= link_to "Back", "https://39c1d26474174bfaa6f0951532846c08.vfs.cloud9.ap-northeast-1.amazonaws.com/books" %>

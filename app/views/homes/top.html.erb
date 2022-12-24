@@ -2,17 +2,6 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style type="text/css">
-  .p {
-   position: fixed;
-   display: block;
-   top: 0;
-   left: 0;
-   height: 3px;
-   background: #0076ff;
-   }
-  </style>
   <link rel="stylesheet" media="all" herf="application.css">
  </head>
  
@@ -20,7 +9,7 @@
   <h1>ようこそ<strong>Bookers</strong>へ!</h1>
   <p><strong>Bookers</strong>では，さまざまな書籍に関するあなたの意見や</p>
   <p>印象を共有し交換する事ができます</p>
-  <p><a href="/books">start</a></p>
+  <p><%= link_to "start", "/books" %></p>
   
  </body>
 </html>

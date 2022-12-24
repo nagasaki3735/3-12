@@ -1,23 +1,29 @@
-<!DOCTYPE>
+
 <html>
-
-<html lang="ja">
-<meta charset="UTF-8" />
-<link rel="stylesheet" media="all" href="application.css">
-
+ <head>
+  <html lang="ja">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" media="all" href="application.css">
+ </head>
 
 
  <body>
 
-<p>Book was successfully created.</p>
+   <% if flash[:notice] %>
+    <p id="notice">
+      <%= flash[:notice] %>
+    </p>
+   <% end %>
 
-<p><strong>Title: </strong><%= @book.title %></p>
+  <p><strong>Title:</strong>
+  <%= @book.title %></p>
 
-<p><strong>Body: </strong><%= @book.body %></p>
+  <p><strong>Body:</strong>
+  <%= @book.body %></p>
 
-<a class="edit" href="/edit">Edit</a> |
-<a class="back" href="/books">Back</a>
-
+  <%= link_to "Edit", "/books/#{@book.id}/edit" %>
+  |
+  <%= link_to "Back", "https://39c1d26474174bfaa6f0951532846c08.vfs.cloud9.ap-northeast-1.amazonaws.com/books" %>
 
  </body>
 </html>
